@@ -229,16 +229,90 @@
 
   <!-- Section 6: Interactive Online Tool Embed -->
   <div id="interactive-tool" style="margin-top: 45px; margin-bottom: 35px;">
+
+    <!-- Styles for Fullscreen & Dedicated Vertical Scroller -->
+    <style>
+      /* Smooth scroller on outer card in Fullscreen Mode */
+      #ct-ccl-tool-card:fullscreen,
+      #ct-ccl-tool-card:-webkit-full-screen,
+      #ct-ccl-tool-card:-moz-full-screen,
+      #ct-ccl-tool-card:-ms-fullscreen,
+      #ct-ccl-tool-card.ct-ccl-fullscreen-active {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        z-index: 99999999 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        background: #0f172a !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: smooth !important;
+      }
+
+      /* Custom prominent scrollbar for fullscreen card */
+      #ct-ccl-tool-card::-webkit-scrollbar {
+        width: 12px;
+      }
+      #ct-ccl-tool-card::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      #ct-ccl-tool-card::-webkit-scrollbar-thumb {
+        background: #38bdf8;
+        border-radius: 6px;
+        border: 2px solid #0f172a;
+      }
+      #ct-ccl-tool-card::-webkit-scrollbar-thumb:hover {
+        background: #0284c7;
+      }
+
+      /* Sticky Top Bar in Fullscreen so controls are always available */
+      #ct-ccl-tool-card:fullscreen .ct-ccl-topbar,
+      #ct-ccl-tool-card:-webkit-full-screen .ct-ccl-topbar,
+      #ct-ccl-tool-card:-moz-full-screen .ct-ccl-topbar,
+      #ct-ccl-tool-card:-ms-fullscreen .ct-ccl-topbar,
+      #ct-ccl-tool-card.ct-ccl-fullscreen-active .ct-ccl-topbar {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: #0f172a !important;
+        border-bottom: 1px solid #334155 !important;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.4) !important;
+      }
+
+      /* In Fullscreen mode, give iframe full expanded height so complete form & signatures display */
+      #ct-ccl-tool-card:fullscreen #ct-ccl-frame,
+      #ct-ccl-tool-card:-webkit-full-screen #ct-ccl-frame,
+      #ct-ccl-tool-card:-moz-full-screen #ct-ccl-frame,
+      #ct-ccl-tool-card:-ms-fullscreen #ct-ccl-frame,
+      #ct-ccl-tool-card.ct-ccl-fullscreen-active #ct-ccl-frame {
+        width: 100% !important;
+        height: 1380px !important;
+        min-height: 1380px !important;
+        display: block !important;
+        border: none !important;
+        background: #f8fafc !important;
+      }
+    </style>
+
     <div id="ct-ccl-tool-card" style="width: 100%; border: 2px solid #0f172a; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 22px rgba(15,23,42,0.12); background: #ffffff;">
       
       <!-- Card Bar -->
-      <div style="background: #0f172a; color: #ffffff; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div class="ct-ccl-topbar" style="background: #0f172a; color: #ffffff; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         <div>
           <span style="font-weight: 800; font-size: 16px; color: #38bdf8;">💻 ऑनलाइन संतान देख-रेख अवकाश (CCL) प्रपत्र जनरेटर</span>
           <span style="font-size: 11.5px; background: #0284c7; color: #fff; padding: 3px 8px; border-radius: 4px; margin-left: 8px; font-weight: bold;">RSR 103C</span>
         </div>
         <div style="display: flex; gap: 8px;">
-          <button type="button" onclick="ctCclToggleFull()" style="background: #f59e0b; color: #000; border: none; padding: 6px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12.5px; display: flex; align-items: center; gap: 4px;">
+          <button type="button" id="ct-ccl-fs-btn" onclick="ctCclToggleFull()" style="background: #f59e0b; color: #000; border: none; padding: 6px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12.5px; display: flex; align-items: center; gap: 4px; transition: all 0.2s;">
             ⛶ फ़ुल स्क्रीन (Full Screen)
           </button>
           <button type="button" onclick="document.getElementById('ct-ccl-frame').src=document.getElementById('ct-ccl-frame').src" style="background: #334155; color: #ffffff; border: 1px solid #475569; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 12.5px;">
@@ -247,12 +321,17 @@
         </div>
       </div>
 
-      <!-- Iframe -->
-      <iframe id="ct-ccl-frame" src="https://rajasthan-samarpit-avkas-pl-form.vercel.app/child-care-leave-form" style="width: 100%; height: 1100px; border: none; display: block;" title="संतान देख-रेख अवकाश प्रपत्र जनरेटर" allowfullscreen></iframe>
+      <!-- Iframe with full scroll support -->
+      <iframe id="ct-ccl-frame" 
+              src="https://rajasthan-samarpit-avkas-pl-form.vercel.app/child-care-leave-form" 
+              style="width: 100%; height: 1180px; border: none; display: block;" 
+              title="संतान देख-रेख अवकाश प्रपत्र जनरेटर" 
+              scrolling="yes" 
+              allowfullscreen></iframe>
 
       <!-- Footer Bar -->
       <div style="background: #f8fafc; padding: 10px 16px; font-size: 13px; color: #475569; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-        <span>💡 <strong>सुझाव:</strong> विवरण भरने के बाद <strong>"🖨️ A4 प्रिंट करें"</strong> बटन से 100% सटीक सिंगल पेज प्रिंट निकालें।</span>
+        <span>💡 <strong>सुझाव:</strong> संपूर्ण प्रपत्र व हस्ताक्षर देखने हेतु <strong>"फ़ुल स्क्रीन"</strong> करें एवं नीचे स्क्रॉल करें। विवरण भरने के बाद <strong>"🖨️ A4 प्रिंट करें"</strong> बटन से सिंगल पेज प्रिंट निकालें।</span>
         <span>Powered by <a href="https://www.creativeteachers.in" target="_blank" style="color: #0284c7; font-weight: bold; text-decoration: none;">creativeteachers.in</a></span>
       </div>
 
@@ -262,15 +341,69 @@
   <script>
     function ctCclToggleFull() {
       var elem = document.getElementById("ct-ccl-tool-card");
+      var btn = document.getElementById("ct-ccl-fs-btn");
       if (!elem) return;
-      if (!document.fullscreenElement) {
-        if (elem.requestFullscreen) { elem.requestFullscreen(); }
-        else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen(); }
-        else if (elem.msRequestFullscreen) { elem.msRequestFullscreen(); }
+
+      var isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || elem.classList.contains("ct-ccl-fullscreen-active"));
+
+      if (!isFs) {
+        // Enter Fullscreen
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen().catch(function() {
+            elem.classList.add("ct-ccl-fullscreen-active");
+            updateCclBtn(true);
+          });
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        } else {
+          elem.classList.add("ct-ccl-fullscreen-active");
+          updateCclBtn(true);
+        }
       } else {
-        if (document.exitFullscreen) { document.exitFullscreen(); }
+        // Exit Fullscreen
+        if (document.exitFullscreen && (document.fullscreenElement || document.webkitFullscreenElement)) {
+          document.exitFullscreen().catch(function() {});
+        } else if (document.webkitExitFullscreen && (document.fullscreenElement || document.webkitFullscreenElement)) {
+          document.webkitExitFullscreen();
+        }
+        elem.classList.remove("ct-ccl-fullscreen-active");
+        updateCclBtn(false);
       }
     }
+
+    function updateCclBtn(active) {
+      var btn = document.getElementById("ct-ccl-fs-btn");
+      if (!btn) return;
+      if (active) {
+        btn.innerHTML = "✖ फ़ुल स्क्रीन से बाहर (Exit)";
+        btn.style.background = "#ef4444";
+        btn.style.color = "#ffffff";
+      } else {
+        btn.innerHTML = "⛶ फ़ुल स्क्रीन (Full Screen)";
+        btn.style.background = "#f59e0b";
+        btn.style.color = "#000000";
+      }
+    }
+
+    // Sync button state on browser native fullscreen changes (e.g. user presses ESC)
+    document.addEventListener("fullscreenchange", function() {
+      var elem = document.getElementById("ct-ccl-tool-card");
+      var active = !!(document.fullscreenElement === elem);
+      if (elem && !active) {
+        elem.classList.remove("ct-ccl-fullscreen-active");
+      }
+      updateCclBtn(active);
+    });
+    document.addEventListener("webkitfullscreenchange", function() {
+      var elem = document.getElementById("ct-ccl-tool-card");
+      var active = !!(document.webkitFullscreenElement === elem);
+      if (elem && !active) {
+        elem.classList.remove("ct-ccl-fullscreen-active");
+      }
+      updateCclBtn(active);
+    });
   </script>
 
   <!-- Section 7: FAQs -->

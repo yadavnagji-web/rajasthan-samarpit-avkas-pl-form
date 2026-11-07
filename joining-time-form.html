@@ -403,17 +403,50 @@
       text-decoration: none;
     }
 
-    /* Fullscreen Modal Override - Smooth page scroll, no inner scrollers */
+    /* Custom Smooth Scroller */
+    html {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #0284c7;
+      border-radius: 5px;
+      border: 2px solid #0f172a;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+
+    /* Fullscreen Mode (Both Native & Class Fallback) */
+    :fullscreen body,
+    :-webkit-full-screen body,
+    html.is-fullscreen-mode body,
     body.is-fullscreen-mode {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      z-index: 9999999 !important;
       background: #0f172a !important;
-      padding: 12px 16px !important;
+      min-height: 100vh !important;
       overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      padding: 16px !important;
+    }
+
+    :fullscreen .app-header,
+    :-webkit-full-screen .app-header,
+    body.is-fullscreen-mode .app-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4) !important;
     }
 
     body.is-fullscreen-mode .main-grid {
@@ -917,18 +950,56 @@
       document.body.removeChild(link);
     }
 
-    // In-Page Fullscreen Modal
+    // Fullscreen Toggle (Native + Fallback with smooth scroller)
     function toggleFullscreen() {
-      const isFs = document.body.classList.toggle("is-fullscreen-mode");
-      const btn = document.getElementById("fsToggleBtn");
-      if (isFs) {
-        btn.innerHTML = "✖ फ़ुल स्क्रीन से बाहर";
-        btn.style.background = "#ef4444";
+      const docEl = document.documentElement;
+      const isCurrentlyFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.body.classList.contains("is-fullscreen-mode"));
+
+      if (!isCurrentlyFs) {
+        if (docEl.requestFullscreen) {
+          docEl.requestFullscreen().catch(() => {
+            setFullscreenState(true);
+          });
+        } else if (docEl.webkitRequestFullscreen) {
+          docEl.webkitRequestFullscreen();
+        } else {
+          setFullscreenState(true);
+        }
       } else {
-        btn.innerHTML = "⛶ फ़ुल स्क्रीन";
-        btn.style.background = "#334155";
+        if (document.exitFullscreen && (document.fullscreenElement || document.webkitFullscreenElement)) {
+          document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen && (document.fullscreenElement || document.webkitFullscreenElement)) {
+          document.webkitExitFullscreen();
+        }
+        setFullscreenState(false);
       }
     }
+
+    function setFullscreenState(active) {
+      const btn = document.getElementById("fsToggleBtn");
+      if (active) {
+        document.documentElement.classList.add("is-fullscreen-mode");
+        document.body.classList.add("is-fullscreen-mode");
+        if (btn) {
+          btn.innerHTML = "✖ फ़ुल स्क्रीन से बाहर";
+          btn.style.background = "#ef4444";
+        }
+      } else {
+        document.documentElement.classList.remove("is-fullscreen-mode");
+        document.body.classList.remove("is-fullscreen-mode");
+        if (btn) {
+          btn.innerHTML = "⛶ फ़ुल स्क्रीन";
+          btn.style.background = "#334155";
+        }
+      }
+    }
+
+    document.addEventListener("fullscreenchange", () => {
+      setFullscreenState(!!(document.fullscreenElement || document.webkitFullscreenElement));
+    });
+    document.addEventListener("webkitfullscreenchange", () => {
+      setFullscreenState(!!(document.fullscreenElement || document.webkitFullscreenElement));
+    });
 
     // Initial run
     window.addEventListener("DOMContentLoaded", () => {
