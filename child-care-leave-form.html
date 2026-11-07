@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>संतान देख-रेख अवकाश प्रपत्र (Child Care Leave - CCL Form) | Creative Teachers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --secondary: #0f172a;
+      --accent: #2563eb;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #cbd5e1;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      padding: 16px;
+      line-height: 1.45;
+    }
+
+    /* Top App Header */
+    .app-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-text h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .header-text p {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 7px 13px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+
+    .btn-success {
+      background: #16a34a;
+      color: #ffffff;
+    }
+    .btn-success:hover {
+      background: #15803d;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .btn-warning {
+      background: #f59e0b;
+      color: #ffffff;
+    }
+    .btn-warning:hover {
+      background: #d97706;
+    }
+
+    .btn-fullscreen {
+      background: #334155;
+      color: #ffffff;
+    }
+    .btn-fullscreen:hover {
+      background: #475569;
+    }
+
+    /* Main Container */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 500px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @media (max-width: 1080px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Form Container - NO SCROLLER, FITS NATURALLY */
+    .form-panel {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 16px 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      overflow: visible;
+    }
+
+    .panel-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .form-group {
+      margin-bottom: 7px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 12.5px;
+      color: #1e293b;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .rule-hint {
+      font-size: 11px;
+      background: #eff6ff;
+      border-left: 3px solid #0284c7;
+      padding: 4px 8px;
+      border-radius: 0 6px 6px 0;
+      margin-top: 3px;
+      color: #1e40af;
+      line-height: 1.35;
+    }
+
+    .rule-warning {
+      font-size: 11px;
+      background: #fef2f2;
+      border-left: 3px solid #ef4444;
+      padding: 4px 8px;
+      border-radius: 0 6px 6px 0;
+      margin-top: 3px;
+      color: #991b1b;
+      display: none;
+      line-height: 1.35;
+    }
+
+    /* Preview Panel */
+    .preview-panel {
+      background: #cbd5e1;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 842px;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .preview-controls {
+      width: 100%;
+      max-width: 210mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* A4 Paper Sheet (Calibrated to match official format exactly) */
+    .a4-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      height: 297mm;
+      padding: 16mm 18mm 12mm 18mm;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      position: relative;
+      color: #000000;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .doc-title {
+      text-align: center;
+      font-size: 15.5pt;
+      font-weight: bold;
+      text-decoration: underline;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* Official CCL List */
+    .ccl-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 11pt;
+      line-height: 1.35;
+      color: #000000;
+    }
+
+    .ccl-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .ccl-num {
+      width: 26px;
+      font-weight: normal;
+      flex-shrink: 0;
+    }
+
+    .ccl-label {
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .ccl-colon {
+      width: 15px;
+      flex-shrink: 0;
+    }
+
+    .ccl-val {
+      flex-grow: 1;
+      font-weight: bold;
+      color: #000080;
+      border-bottom: 1px dotted #000000;
+      min-height: 19px;
+      padding-bottom: 1px;
+      word-break: break-word;
+    }
+
+    .ccl-val-plain {
+      border-bottom: none;
+    }
+
+    /* Applicant Signature Block */
+    .applicant-sign-block {
+      margin-top: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 11pt;
+    }
+
+    .controlling-box {
+      border-top: 1.5px solid #000000;
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+
+    .controlling-title {
+      text-align: center;
+      font-size: 13pt;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 8px;
+    }
+
+    .controlling-rec {
+      text-align: center;
+      font-size: 11pt;
+      margin-bottom: 12px;
+    }
+
+    .controlling-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 11pt;
+    }
+
+    .doc-footer {
+      border-top: 1px solid #777777;
+      padding-top: 4px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8pt;
+      color: #444444;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    .doc-footer .brand {
+      color: #0284c7;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* In-Page Fullscreen Modal */
+    body.is-fullscreen-mode {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9999999 !important;
+      background: #0f172a !important;
+      padding: 12px 16px !important;
+      overflow-y: auto !important;
+    }
+
+    body.is-fullscreen-mode .main-grid {
+      height: auto !important;
+      min-height: calc(100vh - 80px) !important;
+    }
+
+    body.is-fullscreen-mode .preview-panel {
+      overflow: visible !important;
+      max-height: none !important;
+    }
+
+    body.is-fullscreen-mode .form-panel {
+      max-height: none !important;
+      overflow: visible !important;
+    }
+
+    /* PRINT RULES FOR EXACT SINGLE A4 PAGE */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 12mm 16mm 10mm 16mm;
+      }
+
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: #000000 !important;
+      }
+
+      .app-header, 
+      .form-panel, 
+      .preview-controls, 
+      .btn {
+        display: none !important;
+      }
+
+      .main-grid {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .preview-panel {
+        background: transparent !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        display: block !important;
+      }
+
+      .a4-sheet {
+        box-shadow: none !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .ccl-val {
+        color: #000000 !important;
+      }
+
+      .doc-footer .brand {
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="brand-title">
+      <span class="brand-badge">RSR Rule 103C</span>
+      <div class="header-text">
+        <h1>संतान देख-रेख अवकाश प्रपत्र (Child Care Leave - CCL Form Generator)</h1>
+        <p>राजस्थान सेवा नियमों के तहत CCL आवेदन, स्वतः 18 वर्ष आयु व दिवस कैलकुलेटर एवं A4 प्रिंट</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="btn btn-warning" onclick="loadDemoData()">💡 डेमो डेटा भरें</button>
+      <button type="button" class="btn btn-outline" onclick="resetForm()">🔄 रीसेट</button>
+      <button type="button" class="btn btn-success" onclick="downloadBlankPDF()">📄 ब्लैंक PDF</button>
+      <button type="button" class="btn btn-primary" onclick="window.print()">🖨️ A4 प्रिंट करें</button>
+      <button type="button" class="btn btn-fullscreen" id="fsToggleBtn" onclick="toggleFullscreen()">⛶ फ़ुल स्क्रीन</button>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <main class="main-grid">
+    <!-- Left Input Panel (No Inner Scrollbar) -->
+    <div class="form-panel">
+      <div class="panel-title">
+        <span>आवेदन विवरण (Application Details)</span>
+        <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">13 आवश्यक बिंदु</span>
+      </div>
+
+      <form id="cclForm" onsubmit="return false;">
+        <!-- 1 & 2: Name & Designation -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="empName">1. Name of the Applicant (आवेदक का नाम) *</label>
+            <input type="text" id="empName" placeholder="जैसे: श्रीमती अनीता शर्मा" oninput="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="empPost">2. Designation (पदनाम) *</label>
+            <input type="text" id="empPost" placeholder="जैसे: अध्यापक लेवल-2 / वरिष्ठ अध्यापक" oninput="updatePreview()">
+          </div>
+        </div>
+
+        <!-- 3: Dept / Office -->
+        <div class="form-group">
+          <label for="deptOffice">3. Dept / Office / Section (विभाग / विद्यालय / कार्यालय) *</label>
+          <input type="text" id="deptOffice" placeholder="जैसे: रा.उ.मा.वि. सांगानेर (जयपुर)" oninput="updatePreview()">
+        </div>
+
+        <!-- 4 & 5: Child Name & DOB -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="childName">4. Name of Child (संतान का नाम) *</label>
+            <input type="text" id="childName" placeholder="जैसे: मास्टर आरव शर्मा" oninput="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="childDob">5. Date of Birth of Child (जन्म तिथि) *</label>
+            <input type="date" id="childDob" onchange="onChildDobChange()">
+          </div>
+        </div>
+
+        <!-- 6 & 7: 18th Year Date & Eldest check -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="child18Date">6. Date of attaining 18 yrs (18 वर्ष पूर्ण तिथि) *</label>
+            <input type="date" id="child18Date" onchange="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="isEldest">7. Is child among two eldest? (दो ज्येष्ठ संतान?) *</label>
+            <select id="isEldest" onchange="updatePreview()">
+              <option value="Yes">Yes (हाँ)</option>
+              <option value="No">No (नहीं)</option>
+            </select>
+          </div>
+        </div>
+        <div id="cclAgeAlert" class="rule-hint" style="margin-bottom: 6px;">💡 जन्म तिथि चुनते ही 18 वर्ष पूर्ण होने की सही तिथि स्वतः दर्ज हो जाएगी।</div>
+
+        <!-- 8 & 11: EL in credit & Past CCL availed -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="elCredit">8. EL / PL in credit as on date (संचित PL) *</label>
+            <input type="number" id="elCredit" placeholder="जैसे: 42" min="0" oninput="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="pastCcl">11. Total CCL availed till date (पूर्व उपभोग) *</label>
+            <input type="number" id="pastCcl" placeholder="जैसे: 60" min="0" oninput="onLeaveChange()">
+          </div>
+        </div>
+
+        <!-- 9: Period of Leave (From, To, Days) -->
+        <div class="form-row-3">
+          <div class="form-group">
+            <label for="leaveFrom">9. From (प्रारंभ तिथि) *</label>
+            <input type="date" id="leaveFrom" onchange="onLeaveChange()">
+          </div>
+          <div class="form-group">
+            <label for="leaveTo">To (समाप्ति तिथि) *</label>
+            <input type="date" id="leaveTo" onchange="onLeaveChange()">
+          </div>
+          <div class="form-group">
+            <label for="leaveDays">Days (कुल दिवस) *</label>
+            <input type="number" id="leaveDays" placeholder="जैसे: 30" min="1" oninput="updatePreview()">
+          </div>
+        </div>
+
+        <!-- Prefix / Suffix & Reason -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prefixSuffix">Prefix/Suffix of holidays (आगे-पीछे के अवकाश)</label>
+            <input type="text" id="prefixSuffix" placeholder="जैसे: 31st Dec शीतकालीन अवकाश" oninput="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="leaveReason">10. Reason for leave (अवकाश का कारण) *</label>
+            <input type="text" id="leaveReason" placeholder="जैसे: बोर्ड परीक्षा की तैयारी एवं देखभाल हेतु" oninput="updatePreview()">
+          </div>
+        </div>
+        <div id="cclDaysAlert" class="rule-hint" style="margin-bottom: 6px;">💡 तारीख चुनते ही कुल दिनों की स्वतः गणना हो जाएगी।</div>
+
+        <!-- 12: Station Leave & Address -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="stationPerm">12(a) Station leave required? (मुख्यालय त्याग) *</label>
+            <select id="stationPerm" onchange="updatePreview()">
+              <option value="No">No (नहीं)</option>
+              <option value="Yes">Yes (हाँ)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="leaveAddress">12(b) Address during leave (अवकाश काल का पता)</label>
+            <input type="text" id="leaveAddress" placeholder="जैसे: गृह निवास, सांगानेर (जयपुर)" oninput="updatePreview()">
+          </div>
+        </div>
+
+        <!-- 13: Last Leave Details -->
+        <div class="form-group">
+          <label for="lastLeaveInfo">13. Date of return from last leave & nature/period (अंतिम अवकाश का विवरण) *</label>
+          <input type="text" id="lastLeaveInfo" placeholder="जैसे: 15/07/2026, 10 दिन उपार्जित अवकाश (PL)" oninput="updatePreview()">
+        </div>
+
+        <!-- Signatory Meta -->
+        <div class="form-row-3" style="margin-top: 4px;">
+          <div class="form-group">
+            <label for="applyDate">Date (आवेदन दिनांक)</label>
+            <input type="date" id="applyDate" onchange="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="payCardNo">Pay Card / Employee ID *</label>
+            <input type="text" id="payCardNo" placeholder="जैसे: RJJP2018045689" oninput="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label for="ctrlRec">Controlling Officer Recommendation</label>
+            <select id="ctrlRec" onchange="updatePreview()">
+              <option value="Leave Recommended.">Leave Recommended</option>
+              <option value="Leave Not Recommended.">Leave Not Recommended</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Right Live Preview Panel -->
+    <div class="preview-panel">
+      <div class="preview-controls">
+        <span style="font-size: 13px; font-weight: 600; color: #334155;">📄 लाइव A4 प्रपत्र पूर्वावलोकन (Official CCL Format)</span>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-primary" style="padding: 5px 12px; font-size: 12.5px;" onclick="window.print()">🖨️ A4 प्रिंट निकालें</button>
+        </div>
+      </div>
+
+      <!-- Printable A4 Paper Sheet -->
+      <div class="a4-sheet" id="printableSheet">
+        <!-- Title -->
+        <div>
+          <div class="doc-title">APPLICATION FOR CHILD CARE LEAVE</div>
+
+          <!-- Official 13 Rows List -->
+          <div class="ccl-list">
+            <!-- 1 -->
+            <div class="ccl-row">
+              <div class="ccl-num">1.</div>
+              <div class="ccl-label">Name of the Applicant</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_name">-</div>
+            </div>
+
+            <!-- 2 -->
+            <div class="ccl-row">
+              <div class="ccl-num">2.</div>
+              <div class="ccl-label">Designation</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_post">-</div>
+            </div>
+
+            <!-- 3 -->
+            <div class="ccl-row">
+              <div class="ccl-num">3.</div>
+              <div class="ccl-label">Dept/Office/Section</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_dept">-</div>
+            </div>
+
+            <!-- 4 -->
+            <div class="ccl-row">
+              <div class="ccl-num">4.</div>
+              <div class="ccl-label">Name of Child for whom Child<br>Care leave is applied for</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_childName" style="align-self: flex-end;">-</div>
+            </div>
+
+            <!-- 5 -->
+            <div class="ccl-row">
+              <div class="ccl-num">5.</div>
+              <div class="ccl-label">Date of Birth of the Child</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_childDob">-</div>
+            </div>
+
+            <!-- 6 -->
+            <div class="ccl-row">
+              <div class="ccl-num">6.</div>
+              <div class="ccl-label">Date on which child will be attaining<br>18 years.</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_child18Date" style="align-self: flex-end;">-</div>
+            </div>
+
+            <!-- 7 -->
+            <div class="ccl-row">
+              <div class="ccl-num">7.</div>
+              <div class="ccl-label">Is the child among the two eldest<br>Children</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_isEldest" style="align-self: flex-end;">Yes</div>
+            </div>
+
+            <!-- 8 -->
+            <div class="ccl-row">
+              <div class="ccl-num">8.</div>
+              <div class="ccl-label">EL in credit (as on date)</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_elCredit">-</div>
+            </div>
+
+            <!-- 9 -->
+            <div class="ccl-row">
+              <div class="ccl-num">9.</div>
+              <div class="ccl-label">Period of Leave- <span id="pv_leaveDays">___</span> Days</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_period">From _________ To _________</div>
+            </div>
+            <div class="ccl-row" style="margin-top: -3px;">
+              <div class="ccl-num"></div>
+              <div class="ccl-label">Prefix/Suffix of holidays, if any</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_prefixSuffix">-</div>
+            </div>
+
+            <!-- 10 -->
+            <div class="ccl-row">
+              <div class="ccl-num">10.</div>
+              <div class="ccl-label">Reason(s) for leave applied for</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_reason">-</div>
+            </div>
+
+            <!-- 11 -->
+            <div class="ccl-row">
+              <div class="ccl-num">11.</div>
+              <div class="ccl-label">Total Child Care Leave availed till date</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_pastCcl">-</div>
+            </div>
+
+            <!-- 12 -->
+            <div class="ccl-row">
+              <div class="ccl-num">12.</div>
+              <div class="ccl-label">(a) Whether permission to leave<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;station is required</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_stationPerm" style="align-self: flex-end;">No</div>
+            </div>
+            <div class="ccl-row" style="margin-top: -3px;">
+              <div class="ccl-num"></div>
+              <div class="ccl-label">(b) If Yes, Address during<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leave period</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_leaveAddress" style="align-self: flex-end;">-</div>
+            </div>
+
+            <!-- 13 -->
+            <div class="ccl-row">
+              <div class="ccl-num">13.</div>
+              <div class="ccl-label">Date of return from last leave,<br>& nature and period of that leave</div>
+              <div class="ccl-colon">:</div>
+              <div class="ccl-val" id="pv_lastLeaveInfo" style="align-self: flex-end;">-</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signatures & Remarks -->
+        <div>
+          <!-- Applicant Sign block -->
+          <div class="applicant-sign-block">
+            <div>
+              Date : <span id="pv_applyDate" style="font-weight: bold; border-bottom: 1px dotted #000; padding: 0 10px;">-</span>
+            </div>
+            <div style="text-align: right; line-height: 1.5;">
+              <div>Signature of applicant</div>
+              <div>Pay Card No. / ID : <span id="pv_payCardNo" style="font-weight: bold;">-</span></div>
+            </div>
+          </div>
+
+          <!-- Controlling Officer Box -->
+          <div class="controlling-box">
+            <div class="controlling-title">Remarks of Controlling Officer</div>
+            <div class="controlling-rec" id="pv_ctrlRec">Leave Recommended / Leave Not Recommended.</div>
+
+            <div class="controlling-footer">
+              <div>
+                Date : ___________________
+              </div>
+              <div style="text-align: right; line-height: 1.5;">
+                <div>Signature ___________________</div>
+                <div>Designation ___________________</div>
+                <div>Office ______________________</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Branding -->
+          <div class="doc-footer">
+            <div>
+              <a href="https://www.creativeteachers.in" target="_blank" class="brand">www.creativeteachers.in</a>
+              • राजस्थान संतान देख-रेख अवकाश (Child Care Leave - CCL) अधिकृत प्रपत्र (RSR Rule 103C)
+            </div>
+            <div>Page: 1 of 1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Embedded Base64 Blank PDF
+    const BLANK_PDF_B64 = "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VG9vbD4KICAgICAgPHhhcDpNb2RpZnlEYXRlPjIwMjItMTAtMjhUMTE6MjA6NDRaPC94YXA6TW9kaWZ5RGF0ZT4KICAgICAgPHhhcDpNZXRhZGF0YURhdGU+MjAyMi0xMC0yOFQxMToyMDo0NFo8L3hhcDpNZXRhZGF0YURhdGU+CiAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgIDxyZGY6RGVzY3JpcHRpb24geG1sbnM6eGFwTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHJkZjphYm91dD0iMmNlN2FmYmYtNGU3My0xMWRlLTAwMDAtYjkyYzAzNmEzNTJmIj4KICAgICAgPHhhcE1NOkRvY3VtZW50SUQ+MmNlN2FmYmYtNGU3My0xMWRlLTAwMDAtYjkyYzAzNmEzNTJmPC94YXBNTTpEb2N1bWVudElEPgogICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgICA8cmRmOkRlc2NyaXB0aW9uIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgcmRmOmFib3V0PSIyY2U3YWZiZi00ZTczLTExZGUtMDAwMC1iOTJjMDM2YTM1MmYiPgogICAgICA8ZGM6Zm9ybWF0PmFwcGxpY2F0aW9uL3BkZjwvZGM6Zm9ybWF0PgogICAgICA8ZGM6dGl0bGU+CiAgICAgICAgPHJkZjpBbHQ+CiAgICAgICAgICA8cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiPkNDTF9MRUFWRV9BUFBMTjwvcmRmOmxpPgogICAgICAgIDwvcmRmOkFsdD4KICAgICAgPC9kYzp0aXRsZT4KICAgICAgPGRjOmNyZWF0b3I+CiAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICA8cmRmOmxpPkFkbWluaXN0cmF0b3I8L3JkZjpsaT4KICAgICAgICA8L3JkZjpTZXE+CiAgICAgIDwvZGM6Y3JlYXRvcj4KICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICAgPHJkZjpEZXNjcmlwdGlvbiB4bWxuczpwZGY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8iIHJkZjphYm91dD0iMmNlN2FmYmYtNGU3My0xMWRl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MS9CYXNlRm9udC9IZWx2ZXRpY2EvRW5jb2RpbmcvV2luQW5zaUVuY29kaW5nPj4KZW5kb2JqCgoyNiAwIG9iago8PC9MZW5ndGggMTA5L0ZpbHRlci9GbGF0ZURlY29kZT4+CnN0cmVhbQp42lWKOwoCQRBE8z5FnWB2PtvVDsgGgiyYKZ2J4aiBBhp4fhszq4J6D0pesnMpyNECZrQMf8p0H48PelL4FSkXpFmRTHFa//R9w3lrv9TBZpXKYjO7kRobxsZNcLUWj86xXPwge5ejfAFjkxrECmVuZHN0cmVhbQplbmRvYmoKCjI3IDAgb2JqCjw8L0xlbmd0aCAxNjgvRmlsdGVyL0ZsYXRlRGVjb2RlPj4Kc3RyZWFtCnjaTY07DgIxDET7nMInWPyLnUiIAgkh0YHSIQq07EIBBRScH4cG5BTjGc9LeqZ1SwQYQ0AFQRDaIy1u0/0NBdoMg2QYNF6Gw/Z/e13huPSRkTGzkZ2NXFythJ7CE8vOblYtVL/xbGN4Eo2SOUvmn8soJCiiwjXyC6OSo2NkvU/BrTZ3rpnNHk2V+KlGrl9Nzp2iwQptXXPR4OnIdXVqu7RpaZ8+bl00OAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgMjgKMDAwMDAwMDAwNiA2NTUzNSBmIAowMDAwMDAwMDQyIDAwMDAwIG4gCjAwMDAwMDAxMDQgMDAwMDAgbiAKMDAwMDAwMDE1NiAwMDAwMCBuIAowMDAwMDAwMzMyIDAwMDAwIG4gCjAwMDAwMDAzOTcgMDAwMDAgbiAKMDAwMDAwMDAwNyAwMDAwMSBmIAowMDAwMDAwMDEzIDAwMDAxIGYgCjAwMDAwMDA0NjMgMDAwMDAgbiAKMDAwMDAwMDY2NyAwMDAwMCBuIAowMDAwMDA5MjgwIDAwMDAwIG4gCjAwMDAwMDkzNTAgMDAwMDAgbiAKMDAwMDAwOTU3OCAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAxIGYgCjAwMDAwMDk3MjAgMDAwMDAgbiAKMDAwMDAwMDAxOSAwMDAwMSBmIAowMDAwMDEyMzU3IDAwMDAwIG4gCjAwMDAwMTI2MDcgMDAwMDAgbiAKMDAwMDAxMjk3MyAwMDAwMCBuIAowMDAwMDAwMDIwIDAwMDAxIGYgCjAwMDAwMTQ2NTIgMDAwMDEgZiAKMDAwMDAxNDY1MiAwMDAwMCBuIAowMDAwMDE0NzkzIDAwMDAwIG4gCjAwMDAwMTUwMjYgMDAwMDAgbiAKMDAwMDAxNzgzNCAwMDAwMCBuIAowMDAwMDE3OTY2IDAwMDAwIG4gCjAwMDAwMTgwNTYgMDAwMDAgbiAKMDAwMDAxODIzNSAwMDAwMCBuIAoKdHJhaWxlcgo8PC9TaXplIDI4L0luZm8gMTYgMCBSL1Jvb3QgMSAwIFIvSURbPDk0MUExQzBBNDYwQUM2RUU5OTU3NDRDNzgyRUE1N0Q0PjxGNzE1M0I2RUU5OTdBQTVCNjNBOTk5Qjg0NEExNEJCMz5dPj4Kc3RhcnR4cmVmCjE4NDczCiUlRU9GCg==";
+
+    function formatDate(val) {
+      if (!val) return "-";
+      const parts = val.split("-");
+      if (parts.length === 3) {
+        return parts[2] + "/" + parts[1] + "/" + parts[0];
+      }
+      return val;
+    }
+
+    // Auto calculate 18th birthday when DOB is entered
+    function onChildDobChange() {
+      const dobVal = document.getElementById("childDob").value;
+      const alertEl = document.getElementById("cclAgeAlert");
+      if (dobVal) {
+        const parts = dobVal.split("-");
+        const y = parseInt(parts[0], 10) + 18;
+        // Date attaining 18 yrs is one day before birthday (or exact date)
+        const date18 = `${y}-${parts[1]}-${parts[2]}`;
+        document.getElementById("child18Date").value = date18;
+        
+        // Check age
+        const dob = new Date(dobVal);
+        const today = new Date();
+        const ageDiff = today.getFullYear() - dob.getFullYear();
+        if (ageDiff >= 18) {
+          alertEl.innerHTML = "⚠️ <b>चेतावनी:</b> संतान 18 वर्ष से अधिक आयु की हो चुकी है। RSR नियमानुसार केवल 18 वर्ष तक ही CCL देय है (दिव्यांग संतान अपवाद)।";
+          alertEl.style.color = "#b91c1c";
+          alertEl.style.background = "#fef2f2";
+          alertEl.style.borderLeftColor = "#ef4444";
+        } else {
+          alertEl.innerHTML = `✅ संतान की वर्तमान आयु लगभग <b>${ageDiff} वर्ष</b> है। 18 वर्ष पूर्ण होने की तिथि: <b>${formatDate(date18)}</b>`;
+          alertEl.style.color = "#15803d";
+          alertEl.style.background = "#f0fdf4";
+          alertEl.style.borderLeftColor = "#16a34a";
+        }
+      } else {
+        alertEl.innerHTML = "💡 जन्म तिथि चुनते ही 18 वर्ष पूर्ण होने की सही तिथि स्वतः दर्ज हो जाएगी।";
+        alertEl.style.color = "#1e40af";
+        alertEl.style.background = "#eff6ff";
+        alertEl.style.borderLeftColor = "#0284c7";
+      }
+      updatePreview();
+    }
+
+    // Auto calculate leave days
+    function onLeaveChange() {
+      const fVal = document.getElementById("leaveFrom").value;
+      const tVal = document.getElementById("leaveTo").value;
+      const daysInput = document.getElementById("leaveDays");
+      const alertEl = document.getElementById("cclDaysAlert");
+      
+      let calcDays = 0;
+      if (fVal && tVal) {
+        const fromD = new Date(fVal);
+        const toD = new Date(tVal);
+        const diffTime = toD - fromD;
+        if (diffTime >= 0) {
+          calcDays = Math.round(diffTime / (1000 * 60 * 60 * 24)) + 1;
+          daysInput.value = calcDays;
+        }
+      }
+      
+      const past = parseInt(document.getElementById("pastCcl").value || "0", 10);
+      const applied = parseInt(daysInput.value || "0", 10);
+      const totalUsed = past + applied;
+      const rem = 730 - totalUsed;
+
+      if (applied > 0) {
+        alertEl.innerHTML = `📊 चाही गई CCL: <b>${applied} दिन</b> | पूर्व उपभोग: <b>${past} दिन</b> | कुल: <b>${totalUsed}/730 दिन</b> | शेष बचेगी: <b>${rem >= 0 ? rem : 0} दिन</b>`;
+        if (rem < 0) {
+          alertEl.style.color = "#b91c1c";
+          alertEl.style.background = "#fef2f2";
+          alertEl.style.borderLeftColor = "#ef4444";
+        } else {
+          alertEl.style.color = "#15803d";
+          alertEl.style.background = "#f0fdf4";
+          alertEl.style.borderLeftColor = "#16a34a";
+        }
+      } else {
+        alertEl.innerHTML = "💡 तारीख चुनते ही कुल दिनों की स्वतः गणना हो जाएगी। संपूर्ण सेवाकाल में अधिकतम 730 दिन अनुमत हैं।";
+        alertEl.style.color = "#1e40af";
+        alertEl.style.background = "#eff6ff";
+        alertEl.style.borderLeftColor = "#0284c7";
+      }
+
+      updatePreview();
+    }
+
+    // Live Preview Synchronization
+    function updatePreview() {
+      document.getElementById("pv_name").textContent = document.getElementById("empName").value.trim() || "-";
+      document.getElementById("pv_post").textContent = document.getElementById("empPost").value.trim() || "-";
+      document.getElementById("pv_dept").textContent = document.getElementById("deptOffice").value.trim() || "-";
+      document.getElementById("pv_childName").textContent = document.getElementById("childName").value.trim() || "-";
+      
+      const cDob = document.getElementById("childDob").value;
+      document.getElementById("pv_childDob").textContent = formatDate(cDob);
+      
+      const c18 = document.getElementById("child18Date").value;
+      document.getElementById("pv_child18Date").textContent = formatDate(c18);
+      
+      document.getElementById("pv_isEldest").textContent = document.getElementById("isEldest").value;
+      
+      const el = document.getElementById("elCredit").value.trim();
+      document.getElementById("pv_elCredit").textContent = el ? (el + " Days") : "-";
+      
+      const lDays = document.getElementById("leaveDays").value.trim();
+      document.getElementById("pv_leaveDays").textContent = lDays || "___";
+      
+      const lFrom = document.getElementById("leaveFrom").value;
+      const lTo = document.getElementById("leaveTo").value;
+      if (lFrom && lTo) {
+        document.getElementById("pv_period").textContent = `From  ${formatDate(lFrom)}   To   ${formatDate(lTo)}`;
+      } else {
+        document.getElementById("pv_period").textContent = "From _________ To _________";
+      }
+      
+      document.getElementById("pv_prefixSuffix").textContent = document.getElementById("prefixSuffix").value.trim() || "-";
+      document.getElementById("pv_reason").textContent = document.getElementById("leaveReason").value.trim() || "-";
+      
+      const past = document.getElementById("pastCcl").value.trim();
+      document.getElementById("pv_pastCcl").textContent = past ? (past + " Days") : "-";
+      
+      document.getElementById("pv_stationPerm").textContent = document.getElementById("stationPerm").value;
+      document.getElementById("pv_leaveAddress").textContent = document.getElementById("leaveAddress").value.trim() || "-";
+      document.getElementById("pv_lastLeaveInfo").textContent = document.getElementById("lastLeaveInfo").value.trim() || "-";
+      
+      const aDate = document.getElementById("applyDate").value;
+      document.getElementById("pv_applyDate").textContent = formatDate(aDate);
+      
+      document.getElementById("pv_payCardNo").textContent = document.getElementById("payCardNo").value.trim() || "-";
+      document.getElementById("pv_ctrlRec").textContent = document.getElementById("ctrlRec").value;
+    }
+
+    // Demo Data
+    function loadDemoData() {
+      document.getElementById("empName").value = "श्रीमती अनीता शर्मा";
+      document.getElementById("empPost").value = "अध्यापक लेवल-2 (विज्ञान/गणित)";
+      document.getElementById("deptOffice").value = "रा.उ.मा.वि. सांगानेर (जयपुर)";
+      document.getElementById("childName").value = "मास्टर आरव शर्मा";
+      document.getElementById("childDob").value = "2014-10-12";
+      document.getElementById("child18Date").value = "2032-10-11";
+      document.getElementById("isEldest").value = "Yes";
+      document.getElementById("elCredit").value = "42";
+      document.getElementById("pastCcl").value = "60";
+      document.getElementById("leaveFrom").value = "2026-12-01";
+      document.getElementById("leaveTo").value = "2026-12-30";
+      document.getElementById("leaveDays").value = "30";
+      document.getElementById("prefixSuffix").value = "31st Dec शीतकालीन अवकाश";
+      document.getElementById("leaveReason").value = "कक्षा 10वीं अर्द्धवार्षिक परीक्षा की तैयारी एवं देखभाल हेतु";
+      document.getElementById("stationPerm").value = "No";
+      document.getElementById("leaveAddress").value = "गृह निवास, सांगानेर (जयपुर)";
+      document.getElementById("lastLeaveInfo").value = "15/07/2026, 10 दिन उपार्जित अवकाश (PL)";
+      document.getElementById("applyDate").value = "2026-11-20";
+      document.getElementById("payCardNo").value = "RJJP2018045689";
+      document.getElementById("ctrlRec").value = "Leave Recommended.";
+
+      onChildDobChange();
+      onLeaveChange();
+      updatePreview();
+    }
+
+    // Reset Form
+    function resetForm() {
+      document.getElementById("cclForm").reset();
+      onChildDobChange();
+      onLeaveChange();
+      updatePreview();
+    }
+
+    // Download Blank PDF
+    function downloadBlankPDF() {
+      const byteCharacters = atob(BLANK_PDF_B64);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: 'application/pdf' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'rajasthan-child-care-leave-ccl-form.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // In-Page Fullscreen Modal
+    function toggleFullscreen() {
+      const isFs = document.body.classList.toggle("is-fullscreen-mode");
+      const btn = document.getElementById("fsToggleBtn");
+      if (isFs) {
+        btn.innerHTML = "✖ फ़ुल स्क्रीन से बाहर";
+        btn.style.background = "#ef4444";
+      } else {
+        btn.innerHTML = "⛶ फ़ुल स्क्रीन";
+        btn.style.background = "#334155";
+      }
+    }
+
+    // Initial run
+    window.addEventListener("DOMContentLoaded", () => {
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("applyDate").value = today;
+      updatePreview();
+    });
+  </script>
+</body>
+</html>

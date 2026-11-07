@@ -1,4 +1,4 @@
-# राजस्थान सेवा नियम (RSR) अधिकृत प्रपत्र एवं ऑनलाइन जनरेटर
+# राजस्थान सेवा नियम (RSR) अधिकृत प्रपत्र एवं ऑनलाइन जनरेटर संग्रह
 ### Rajasthan Government Employee Service Rules Forms & Online Generators
 **Powered by [Creative Teachers (www.creativeteachers.in)](https://www.creativeteachers.in)**
 
@@ -19,20 +19,29 @@
 * **वेब टूल:** [`joining-time-form.html`](joining-time-form.html) (`/joining-time-form`)
 * **ब्लैंक PDF:** [`rajasthan-joining-time-pl-form.pdf`](rajasthan-joining-time-pl-form.pdf)
 * **ब्लॉग पोस्ट कोड:** [`post_joining_time_content.html`](post_joining_time_content.html)
+
+---
+
+### 3. संतान देख-रेख अवकाश (Child Care Leave - CCL) प्रपत्र
+* **नियम:** राजस्थान सेवा नियम (RSR) नियम 103C एवं वित्त विभाग परिपत्र | अधिकतम 730 दिवस
+* **वेब टूल:** [`child-care-leave-form.html`](child-care-leave-form.html) (`/child-care-leave-form`)
+* **ब्लैंक PDF:** [`rajasthan-child-care-leave-ccl-form.pdf`](rajasthan-child-care-leave-ccl-form.pdf)
+* **ब्लॉग पोस्ट कोड:** [`post_ccl_content.html`](post_ccl_content.html)
 * **मुख्य विशेषताएं:**
-  - 12-कॉलम अधिकृत प्रारूप
-  - बड़ी पंक्तियाँ (Spacious Rows) जिससे पूरे A4 शीट पर संपूर्ण फैलाव होता है
-  - आंतरिक स्क्रोलर मुक्त (No Inner Scroller), सभी फ़ील्ड्स एक ही स्क्रीन पर दिखाई देते हैं
-  - ऑटो दूरी एवं JT पात्रता कैलकुलेटर
+  - 13-कॉलम अधिकृत विभागीय प्रारूप
+  - संतान की जन्म तिथि से स्वतः 18 वर्ष आयु कैलकुलेटर
+  - चाही गई अवधि से स्वतः दिवस एवं 730 दिन में से शेष बैलेंस गणना
+  - बिना आंतरिक स्क्रोलर के पूरा फॉर्म एक नज़र में उपलब्ध
   - 100% सिंगल A4 पेज प्रिंट आउट गारंटी
 
 ---
 
 ## 🚀 लाइव लिंक्स (Live Links)
 
-* **GitHub Pages:** [https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/](https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/)
-* **Joining Time PL Form:** [https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/joining-time-form.html](https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/joining-time-form.html)
-* **Repository:** [https://github.com/yadavnagji-web/rajasthan-samarpit-avkas-pl-form](https://github.com/yadavnagji-web/rajasthan-samarpit-avkas-pl-form)
+* **PL Surrender Form:** [https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/](https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/)
+* **Joining Time to PL Form:** [https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/joining-time-form.html](https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/joining-time-form.html)
+* **Child Care Leave (CCL) Form:** [https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/child-care-leave-form.html](https://yadavnagji-web.github.io/rajasthan-samarpit-avkas-pl-form/child-care-leave-form.html)
+* **GitHub Repository:** [https://github.com/yadavnagji-web/rajasthan-samarpit-avkas-pl-form](https://github.com/yadavnagji-web/rajasthan-samarpit-avkas-pl-form)
 
 ---
 © Creative Teachers • शिक्षा एवं कार्मिक नवाचार
